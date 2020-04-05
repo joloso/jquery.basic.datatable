@@ -1,6 +1,5 @@
  * JQUERY basic datatable plugin:  supports efficient loading of large tables by passing array of objects:
- * Author: Jordan Williams
-usage:
+
         <script>
             $(function() {
                 $("#testTable").basicDataTable(
