@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+            crossorigin="anonymous"></script>
+        <script src="jquery.basic.datatable.js"></script>
+        <script>
+            $(function() {
+               var dataTable = $("#testTable").basicDataTable(
+                                                {
+                                                        data: [{col1:"test1", col2:"test2"}],
+                                                        formatters:{
+                                                            boldFormatter: function(value, row){return "<b>"+value+"</b>"}
+                                                        }
+
+                                                });
+
+                setTimeout(function (){
+                        $("#testTable").basicDataTable('reload', [{col1:"test3", col2:"test4"}]);
+                    }, 3000);
+            });
+            
+        </script>
+    </head>
+    <body>
+        <div id="testTable">
+            <table>
+                <thead><tr><th data-field="col1" data-formatter="boldFormatter">col1</th><th data-field="col2">col2</th></tr></thead>
+                <tbody></tbody>
+            </table>
+            <div style ="background-color:#333333;padding-top: 20px;text-align: center;min-height: 200px;width: 100%; border: 1px solid #999999;">
+                <i class="fa fa-spin fa-spinner fa-2x" style="color:white;"></i>
+            </div>
+        </div>
+    </body>
+</html>
